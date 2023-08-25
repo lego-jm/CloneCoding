@@ -35,6 +35,7 @@
         <img class="header__logo__img" src="./images/favicon.ico" alt="" />
         <h1 class="header__logo__title"><a href="#">YJM</a></h1>
       </div>
+    
       <nav class="header__nav">
         <ul class="header__menu">
           <li><a class="header__menu__item active" href="#home">Home</a></li class="testimonial">
@@ -47,24 +48,29 @@
           <li><a class="header__menu__item" href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <button class="header__toggle" aria-label="navigation menu toggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </header>
     <!-- Main -->
     <main>
       <!-- Home -->
       <section id="home">
-        <img
+        <div class="home__container">
+          <img
           class="home__avatar"
           src="./images/profile.png"
           alt="YJM's profile"
-        />
-        <h2 class="home__title">
-          Hello <br />
-          I&#39;M <strong class="home__title--strong">Dream Coder</strong>, YJM
-        </h2>
-        <p class="home__description">
-          A software engineer currently residing in Sydney, Australia
-        </p>
-        <a class="home__contact" href="#contact">Contact Me</a>
+          />
+          <h2 class="home__title">
+            Hello <br />
+            I&#39;M <strong class="home__title--strong">Dream Coder</strong>, YJM
+          </h2>
+          <p class="home__description">
+            A software engineer currently residing in Sydney, Australia
+          </p>
+          <a class="home__contact" href="#contact">Contact Me</a>
+        </div>
       </section>
       <!-- About me -->
       <section id="about" class="section max-container">

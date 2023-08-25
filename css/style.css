@@ -1,6 +1,7 @@
 /* Global */
 :root {
   /* App colors */
+
   --color-primary: var(--color-black);
   --color-primary-variant: var(--color-gray);
   --color-accent: var(--color-blue);
@@ -13,6 +14,7 @@
   --color-blue: #03e8f9;
   --color-orange: #fd6413;
   --color-gray: #1b1e26;
+  --color-home: #5368b7;
 
   /* Size */
   --size-max-width: 1200px;
@@ -48,7 +50,7 @@ button {
 }
 
 button:focus {
-  outline: 1px solid var(--color-accent);
+  outline: 1px solid transparent;
 }
 
 /* Common */
@@ -74,7 +76,7 @@ button:focus {
 
 /* Header */
 .header {
-  background-color: #000;
+  background-color: transparent;
   position: fixed;
   top: 0;
   width: 100%;
@@ -83,6 +85,12 @@ button:focus {
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  transition: all 250ms ease;
+}
+
+.header--dark {
+  background-color: var(--color-primary);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12)
 }
 
 .header__logo {
@@ -100,13 +108,21 @@ button:focus {
   font-size: 1.8rem;
 }
 
+.header__logo__container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .header__menu {
   display: flex;
   gap: 4px;
 }
 
 .header__menu__item {
+  display: block;
   padding: 8px 16px;
+  border-bottom: 1px solid transparent;
 }
 
 .header__menu__item:hover{
@@ -118,9 +134,13 @@ button:focus {
   border-radius: 4px;
 }
 
+.header__toggle {
+  display: none;
+}
+
 /* Home */
 #home{
-  background-color: var(--color-primary);
+  background-color: var(--color-home);
   color: var(--color-text);
   padding: 5rem 1rem;
   padding-top: 7rem;
@@ -424,6 +444,7 @@ button:focus {
   border-radius: 100%;
   text-align: center;
   box-shadow: 5px 5px 0px 0px var(--color-accent);
+  transition: opacity 200ms ease-in;
 }
 
 /* Footer */
@@ -450,7 +471,7 @@ button:focus {
 
 @media screen and (max-width: 768px) {
   .section {
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
   }
 
   .title {
@@ -464,17 +485,32 @@ button:focus {
   .header {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-primary);
   }
 
   .header__menu {
+    display: none;
     flex-direction: column;
     text-align: center;
-    padding: 1rem 4rem;
+    margin: 1rem 4rem;
     gap: 1rem;
+  }
+
+  .header__menu.open {
+    display: flex;
   }
 
   .header__nav {
     width: 100%;
+  }
+
+  .header__toggle {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--color-white);
+    position: absolute;
+    top: 1.3rem;
+    right: 1rem;
   }
 
   #home {
